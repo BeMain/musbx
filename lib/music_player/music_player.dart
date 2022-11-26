@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:audio_service/audio_service.dart';
@@ -6,8 +7,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:html_unescape/html_unescape.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:just_waveform/just_waveform.dart';
 import 'package:musbx/music_player/audio_handler.dart';
 import 'package:youtube_api/youtube_api.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 
 /// The state of [MusicPlayer].
@@ -93,6 +96,11 @@ class MusicPlayer {
   bool get isLoading => (state == MusicPlayerState.loadingAudio ||
       state == MusicPlayerState.pickingAudio);
 
+  Waveform? get waveform => waveformNotifier.value;
+  final ValueNotifier<Waveform?> waveformNotifier = ValueNotifier(null);
+
+  Stream<WaveformProgress>? waveformProgressStream;
+
   /// How much the pitch will be shifted, in semitones.
   double get pitchSemitones => pitchSemitonesNotifier.value;
   set pitchSemitones(double value) => setPitchSemitones(value);
@@ -152,6 +160,9 @@ class MusicPlayer {
       duration: player.duration,
     ));
 
+    // Start loading waveform
+    _loadWaveform(file.path!);
+
     stateNotifier.value = MusicPlayerState.ready;
   }
 
@@ -184,6 +195,22 @@ class MusicPlayer {
     ));
 
     stateNotifier.value = MusicPlayerState.ready;
+  }
+
+  void _loadWaveform(String filePath) async {
+    waveformNotifier.value = null;
+
+    String tempDirectory = (await getTemporaryDirectory()).path;
+
+    final File inFile = File(filePath);
+    final File outFile = File("${tempDirectory}waveform.wave");
+    waveformProgressStream =
+        JustWaveform.extract(audioInFile: inFile, waveOutFile: outFile);
+    waveformProgressStream?.listen((progress) {
+      if (progress.progress == 1.0 && progress.waveform != null) {
+        waveformNotifier.value = progress.waveform;
+      }
+    });
   }
 
   /// Listen for changes from [player].

@@ -7,6 +7,7 @@ import 'package:musbx/music_player/current_song_card/current_song_panel.dart';
 import 'package:musbx/music_player/loop_card/loop_buttons.dart';
 import 'package:musbx/music_player/loop_card/loop_slider.dart';
 import 'package:musbx/music_player/position_card/position_slider.dart';
+import 'package:musbx/music_player/position_card/waveform_viewer.dart';
 
 class MusicPlayerScreen extends StatelessWidget {
   /// Screen that allows the user to select and play a song.
@@ -37,6 +38,7 @@ Long press rewind button to restart song.""",
           ]),
           Column(
             children: [
+              WaveformViewer(),
               PositionSlider(),
               ButtonPanel(),
             ],
