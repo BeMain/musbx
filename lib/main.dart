@@ -1,4 +1,5 @@
 import 'package:audio_service/audio_service.dart';
+import 'package:chaquopy/chaquopy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:musbx/navigation_screen.dart';
@@ -39,6 +40,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Chaquopy.executeCode('''
+from time import time, ctime
+print("Today is", ctime(time()))
+ ''').then((value) => print(value));
+
     return MaterialApp(
         title: "Musician's Toolbox",
         theme: lightTheme.copyWith(

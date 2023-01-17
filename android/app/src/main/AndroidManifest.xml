@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="se.agardh.musbx">
+    <!-- android:name has been overwritten by chaquopy package. -->
    <application
         android:label="Musician's Toolbox"
-        android:name="${applicationName}"
+        android:name="com.chaquo.python.android.PyApplication" 
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"> <!-- Required by just_audio package. -->
         <!-- android:name has been overwritten by audio_service package. -->
