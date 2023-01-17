@@ -84,11 +84,10 @@ packages:
   chaquopy:
     dependency: "direct main"
     description:
-      name: chaquopy
-      sha256: b951b5a0d5c7b4a8627d3d136df7cde1ae71ade6c84cfb9b85cb6adcdb8e797e
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.19"
+      path: chaquopy
+      relative: true
+    source: path
+    version: "0.0.18"
   characters:
     dependency: transitive
     description:

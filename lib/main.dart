@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Chaquopy.executeCode('''
-from time import time, ctime
+from time import time, ctime 
 print("Today is", ctime(time()))
- ''').then((value) => print(value));
+ ''').then((value) => print(value["textOutputOrError"]));
 
     return MaterialApp(
         title: "Musician's Toolbox",
