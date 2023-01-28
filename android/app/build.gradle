@@ -65,6 +65,11 @@ android {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64" // Required by chaquopy plugin
         }
 
+        python {
+            pip {
+                install "autochord"
+            }
+        }
     }
 
     // (BeMain) Updated to configure signing
