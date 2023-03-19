@@ -40,7 +40,11 @@ dependencies:
   soundpool: ^2.3.0
   
   # Music player
-  just_audio: ^0.9.31
+  just_audio:
+    git:
+      url: https://github.com/Kuama-IT/just_audio.git
+      ref: swift_implementation
+      path: just_audio
   audio_service: ^0.18.9
   file_picker: ^5.2.5
   http: ^0.13.5

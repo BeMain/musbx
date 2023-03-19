@@ -99,7 +99,7 @@ class MusicPlayer {
   final Looper looper = Looper();
 
   /// Component for adjusting the gain for different frequency bands of the song.
-  final Equalizer equalizer = Equalizer();
+  final EqualizerComponent equalizer = EqualizerComponent();
 
   /// Play a [PlatformFile].
   Future<void> playFile(PlatformFile file) async {

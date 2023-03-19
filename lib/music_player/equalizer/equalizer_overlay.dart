@@ -15,7 +15,7 @@ class EqualizerOverlayPainter extends CustomPainter {
   });
 
   /// The Equalizer's parameters.
-  final AndroidEqualizerParameters? parameters;
+  final EqualizerParameters? parameters;
 
   /// The color of the line connecting the thumbs.
   final Color lineColor;
@@ -62,7 +62,7 @@ class EqualizerOverlayPainter extends CustomPainter {
     List<Offset> controlPoints = List.generate(
       parameters!.bands.length,
       (index) {
-        AndroidEqualizerBand band = parameters!.bands[index];
+        EqualizerBand band = parameters!.bands[index];
         double decibelFraction = (band.gain - parameters!.minDecibels) /
             (parameters!.maxDecibels - parameters!.minDecibels);
 

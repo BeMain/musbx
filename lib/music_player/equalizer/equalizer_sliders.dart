@@ -9,7 +9,7 @@ class EqualizerSliders extends StatelessWidget {
   /// A widget used to control the gain on Equalizer's bands.
   EqualizerSliders({super.key});
 
-  final Equalizer equalizer = MusicPlayer.instance.equalizer;
+  final EqualizerComponent equalizer = MusicPlayer.instance.equalizer;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class EqualizerSliders extends StatelessWidget {
   }
 
   /// Build a [Slider] for controlling the gain on [band].
-  Widget buildSlider({AndroidEqualizerBand? band}) {
+  Widget buildSlider({EqualizerBand? band}) {
     return StreamBuilder<double>(
       stream: band?.gainStream,
       builder: (context, snapshot) {
