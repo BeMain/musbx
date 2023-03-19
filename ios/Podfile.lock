@@ -47,6 +47,9 @@ PODS:
   - FMDB/standard (2.7.5)
   - just_audio (0.0.1):
     - Flutter
+    - kMusicSwift (~> 0.2.0)
+  - kMusicSwift (0.2.0):
+    - SwiftAudioPlayerKuama (~> 7.7.0)
   - package_info_plus (0.4.5):
     - Flutter
   - path_provider_foundation (0.0.1):
@@ -62,6 +65,7 @@ PODS:
   - sqflite (0.0.2):
     - Flutter
     - FMDB (>= 2.7.5)
+  - SwiftAudioPlayerKuama (7.7.0)
   - SwiftyGif (5.4.4)
 
 DEPENDENCIES:
@@ -83,7 +87,9 @@ SPEC REPOS:
     - DKImagePickerController
     - DKPhotoGallery
     - FMDB
+    - kMusicSwift
     - SDWebImage
+    - SwiftAudioPlayerKuama
     - SwiftyGif
 
 EXTERNAL SOURCES:
@@ -122,13 +128,15 @@ SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_audio_capture: 93ef890ac148f093d168c33258c3a161b8f5e04b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  just_audio: baa7252489dbcf47a4c7cc9ca663e9661c99aafa
+  just_audio: 59d9cd52fae537a8d5e1d91e435a119109b91bc2
+  kMusicSwift: d1e5f19f614d78a4b3c32eb15c85323bb02fa52d
   package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
   SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
   soundpool: c7f4422ca206e77f8900ed3c4ee6a6ff5a0e38a9
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  SwiftAudioPlayerKuama: ca5918634af482ccead7f5c002df7abc34e597cf
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
 
 PODFILE CHECKSUM: 945c21f50ee6f39a7ad65f452f70b022d7ec8be1

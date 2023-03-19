@@ -42,8 +42,10 @@ class MusicPlayer {
 
   /// The [AudioPlayer] used for playback.
   late final AudioPlayer player = AudioPlayer(
-    audioPipeline:
-        AudioPipeline(androidAudioEffects: [equalizer.androidEqualizer]),
+    audioPipeline: AudioPipeline(
+      androidAudioEffects: [equalizer.justAudioEqualizer],
+      darwinAudioEffects: [equalizer.justAudioEqualizer],
+    ),
   );
 
   /// Used internally to get audio from YouTube.

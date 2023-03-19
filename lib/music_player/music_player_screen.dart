@@ -33,10 +33,9 @@ class MusicPlayerScreen extends StatelessWidget {
           LoopCard(),
         ],
       ),
-      if (!Platform.isIOS)
-        CardList(
-          children: [EqualizerCard()],
-        ),
+      CardList(
+        children: [EqualizerCard()],
+      ),
     ];
 
     return ValueListenableBuilder(

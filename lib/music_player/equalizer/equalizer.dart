@@ -6,7 +6,7 @@ import 'package:musbx/music_player/music_player_component.dart';
 /// A component for [MusicPlayer] that is used to change the gain on specific frequencies.
 class EqualizerComponent extends MusicPlayerComponent {
   /// The [Equalizer] used internally to adjust the gain for different frequency bands.
-  final Equalizer androidEqualizer = Equalizer(
+  final Equalizer justAudioEqualizer = Equalizer(
     darwinMessageParameters: DarwinEqualizerParametersMessage(
       minDecibels: -19,
       maxDecibels: 19,
@@ -41,10 +41,10 @@ class EqualizerComponent extends MusicPlayerComponent {
   void initialize(MusicPlayer musicPlayer) {
     enabled = false;
     enabledNotifier.addListener(() {
-      androidEqualizer.setEnabled(enabled);
+      justAudioEqualizer.setEnabled(enabled);
     });
 
-    androidEqualizer.parameters.then(
+    justAudioEqualizer.parameters.then(
       (value) {
         parametersNotifier.value = value;
         resetGain();
