@@ -72,7 +72,7 @@ class NavigationScreenState extends State<NavigationScreen> {
           ),
           NavigationDestination(
             label: "Drone",
-            icon: Icon(Icons.waves_rounded),
+            icon: Icon(CustomIcons.sine_wave),
           ),
         ],
       ),
