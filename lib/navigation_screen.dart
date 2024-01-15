@@ -1,6 +1,7 @@
 import 'package:advanced_in_app_review/advanced_in_app_review.dart';
 import 'package:flutter/material.dart';
 import 'package:musbx/drone/drone_screen.dart';
+import 'package:musbx/custom_icons.dart';
 import 'package:musbx/metronome/metronome_screen.dart';
 import 'package:musbx/music_player/music_player_screen.dart';
 import 'package:musbx/tuner/tuner_screen.dart';
@@ -59,7 +60,7 @@ class NavigationScreenState extends State<NavigationScreen> {
         destinations: const [
           NavigationDestination(
             label: "Metronome",
-            icon: Icon(Icons.more_horiz),
+            icon: Icon(CustomIcons.metronome),
           ),
           NavigationDestination(
             label: "Music player",
@@ -67,7 +68,7 @@ class NavigationScreenState extends State<NavigationScreen> {
           ),
           NavigationDestination(
             label: "Tuner",
-            icon: Icon(Icons.speed_rounded),
+            icon: Icon(CustomIcons.tuning_fork),
           ),
           NavigationDestination(
             label: "Drone",
